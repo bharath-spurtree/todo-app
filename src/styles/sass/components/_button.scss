@@ -1,0 +1,43 @@
+.btn {
+    margin: 0 1rem;
+    padding: .75rem 1.5rem;
+    border: none;
+    border-radius: 100px;
+    color: #fff;
+    cursor: pointer;
+    
+    &-primary {
+        background-color: var(--color-primary);
+    }
+    
+    &-secondary {
+        color: var(--color-secondary);
+        border: 1px solid var(--color-secondary);
+        transform: all .3s;
+
+        &:hover {
+            color: #fff;
+            background-color: var(--color-secondary);
+        }
+
+    }
+    
+    &-success {
+        color: var(--color-success);
+        border: 1px solid var(--color-success);
+        transition: all .2s;
+
+        &:hover {
+            color: #fff;
+            background-color: var(--color-success);
+        }
+
+    }
+
+    &__small {
+        background-color: #fff;
+        padding: .5rem 1rem;
+        text-transform: capitalize;
+        margin: 0 .5rem;
+    }
+}
