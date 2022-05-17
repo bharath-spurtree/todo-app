@@ -22,7 +22,13 @@
             background-color: var(--color-background-secondary);
             border: none;
             color: inherit;
-            font-size: inherit;
+            font-size: 1.5rem;
+            width: 50%;
+            border: none;
+        }
+
+        & input:focus {
+            // outline: none;
         }
 
     }
