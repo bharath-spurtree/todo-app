@@ -27,7 +27,7 @@ const TodoList = ({ todos, editTodo, completeTodo, deleteTodo }) => {
                                 value={editIndex !== id ? name : text} 
                                 disabled={editIndex !== id} 
                                 onChange={(e) => setText(e.target.value)} 
-                                ref={editIndex != -1 ? editIndex === id ? textInput : undefined : undefined}
+                                ref={editIndex !== -1 ? editIndex === id ? textInput : undefined : undefined}
                             />
                             <div>
                                 {!completed && 
