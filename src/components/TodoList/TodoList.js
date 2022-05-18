@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useRef, useEffect } from "react"
 
 const TodoList = ({ todos, editTodo, completeTodo, deleteTodo }) => {
     const [text, setText] = useState('')
@@ -8,8 +8,11 @@ const TodoList = ({ todos, editTodo, completeTodo, deleteTodo }) => {
     const handleEdit = (id, name) =>  {
         setEditIndex(id);
         setText(name) ;
-        textInput.current?.focus()
     }
+
+    useEffect(() => {
+        textInput.current?.focus()
+    }, [editIndex])
 
     console.log(textInput)
 
@@ -24,7 +27,7 @@ const TodoList = ({ todos, editTodo, completeTodo, deleteTodo }) => {
                                 value={editIndex !== id ? name : text} 
                                 disabled={editIndex !== id} 
                                 onChange={(e) => setText(e.target.value)} 
-                                ref={editIndex === id ? textInput : null} 
+                                ref={editIndex != -1 ? editIndex === id ? textInput : undefined : undefined}
                             />
                             <div>
                                 {!completed && 
