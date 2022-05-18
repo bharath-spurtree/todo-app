@@ -14,8 +14,6 @@ const TodoList = ({ todos, editTodo, completeTodo, deleteTodo }) => {
         textInput.current?.focus()
     }, [editIndex])
 
-    console.log(textInput)
-
     return (
         <div>
             <ul className="todo__list">

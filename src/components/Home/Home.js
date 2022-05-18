@@ -23,10 +23,7 @@ const Home = () => {
         let index = todos.findIndex((t) => t.id === id)
         let todo = todos[index]
         todo.completed = true
-        setTodos((prevState) => {
-            let lTodos = prevState.filter((t) => t.id !== id)
-            return [...lTodos, todo]
-        })
+        setTodos(prevState => [...prevState.slice(0, index), todo, ...prevState.slice(index+1)])
     }
 
     const editTodo = (id, text) => {
@@ -36,7 +33,6 @@ const Home = () => {
         setTodos(prevState => [...prevState.slice(0, index), todo, ...prevState.slice(index+1)])
     }
 
-    console.log(todos)
     return (
         <div className="container">
             <AddTodo addTodo={addTodo} />
