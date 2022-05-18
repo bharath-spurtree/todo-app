@@ -15,7 +15,6 @@ const Home = () => {
     }
 
     const deleteTodo = (id) => {
-        console.log(id)
         setTodos(previousState => previousState.filter((todo) => todo.id !== id))
     }
 
