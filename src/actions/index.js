@@ -14,3 +14,8 @@ export const completeTodo = (index, todo) => ({
     type: actions.COMPLETE_TODO,
     payload: { index, todo }
 })
+
+export const editTodo = (index, todo) => ({
+    type: actions.EDIT_TODO,
+    payload: {index, todo}
+})

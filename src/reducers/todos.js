@@ -8,6 +8,7 @@ const todos = (state=[], action) => {
             ];
         case actions.DELETE_TODO: 
             return state.filter((todo) => todo.id !== action.payload);
+        case actions.EDIT_TODO:
         case actions.COMPLETE_TODO: 
             return [...state.slice(0, action.payload.index), action.payload.todo, ...state.slice(action.payload.index + 1)]
         default: return state
