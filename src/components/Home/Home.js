@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import AddTodo from "../AddTodo/AddTodo"
 import TodoList from "../TodoList/TodoList"
-import { addTodo, deleteTodo, completeTodo } from "../../actions";
+import { addTodo, deleteTodo, completeTodo, editTodo } from "../../actions";
 import { useDispatch, useSelector } from "react-redux"
 
 const Home = () => {
@@ -23,17 +23,17 @@ const Home = () => {
         dispatch(completeTodo(index, todo))
     }
 
-    const editTodo = (id, text) => {
+    const editTodoHandler = (id, text) => {
         let index = todos.findIndex(t => t.id === id)
         let todo = todos[index]
         todo.name = text
-        // setTodos(prevState => [...prevState.slice(0, index), todo, ...prevState.slice(index + 1)])
+        dispatch(editTodo(index, todo))
     }
 
     return (
         <div className="container">
             <AddTodo addTodo={addTodoHandler} />
-            <TodoList todos={todos} deleteTodo={deleteTodoHandler} completeTodo={completeTodoHandler} editTodo={editTodo} />
+            <TodoList todos={todos} deleteTodo={deleteTodoHandler} completeTodo={completeTodoHandler} editTodo={editTodoHandler} />
         </div>
     )
 }
